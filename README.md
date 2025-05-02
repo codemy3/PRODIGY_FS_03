@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛍️ Local Store E-commerce Platform
 
-## Getting Started
+This is a full-stack e-commerce platform for a local store built with **Next.js** and **MongoDB (Mongoose)**. It allows users to browse products, add them to a cart, and proceed to a checkout page.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Product listing with images, descriptions, and prices.
+- Add to Cart functionality with local storage support.
+- Basic checkout page displaying cart items.
+- Seed script to populate MongoDB with sample products.
+
+## 📁 Project Structure
+
+```
+local-store/
+│
+├── pages/                # Next.js pages
+│   ├── api/              # API routes
+│   │   └── products.js   # API to fetch products
+│   ├── index.js          # Homepage with product listing & cart
+│   └── checkout.js       # Checkout page
+│
+├── public/images/        # Product images
+│   ├── product1.jpg
+│   ├── product2.jpg
+│   └── product3.jpg
+│
+├── scripts/
+│   └── seed.js           # MongoDB seed script
+│
+├── styles/
+│   └── Home.module.css   # Styling
+│
+├── utils/
+│   └── dbConnect.ts      # MongoDB connection utility
+│
+├── .env.local            # Environment variables (MONGODB_URI)
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Setup Instructions
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the Repository**:
+```bash
+git clone https://github.com/your-username/local-store.git
+cd local-store
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Install Dependencies**:
+```bash
+npm install
+```
 
-## Learn More
+3. **Set up Environment Variables**: Create a `.env.local` file and add:
+```env
+MONGODB_URI=your-mongodb-connection-string
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. **Seed the Database**:
+```bash
+node scripts/seed.js
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. **Run the Development Server**:
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+6. **Open the App**:
+Visit `http://localhost:3000` in your browser.
 
-## Deploy on Vercel
+## 🖼️ Notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Ensure the product images are placed inside `public/images/` with filenames `product1.jpg`, `product2.jpg`, and `product3.jpg`.
+- Make sure MongoDB is running and accessible.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📌 Future Improvements
+
+- Remove items from cart.
+- Persist cart in MongoDB for authenticated users.
+- Add authentication, payment gateway, and order history.
+
+---
+
+Made with 💖 by Maithri.
