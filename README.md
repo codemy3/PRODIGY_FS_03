@@ -79,6 +79,7 @@ Visit `http://localhost:3000` in your browser.
 - Remove items from cart.
 - Persist cart in MongoDB for authenticated users.
 - Add authentication, payment gateway, and order history.
+![image](https://github.com/user-attachments/assets/a6c49efa-3a22-47bb-a2ba-9345a4d185dd)
 
 ---
 
